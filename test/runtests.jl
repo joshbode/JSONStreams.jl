@@ -1,7 +1,8 @@
 using Base.Test
-using JSONify
-using DataFrames
 
+import JSONify
+using JSON
+using DataFrames
 
 # Complete data
 data  = DataFrame(a = ["a", "b", "c", "d"], b = rand(4), c = [1, 2, 3, 4])
