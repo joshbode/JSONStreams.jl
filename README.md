@@ -1,6 +1,10 @@
 # JSONify.jl
 
-Lossless conversion of custom Julia objects to and from JSON.
+[![Build Status](https://travis-ci.org/joshbode/JSONify.jl.svg?branch=master)](https://travis-ci.org/joshbode/JSONify.jl)
+
+[![Coverage Status](https://coveralls.io/repos/joshbode/JSONify.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/joshbode/JSONify.jl?branch=master)
+
+[![codecov.io](http://codecov.io/github/joshbode/JSONify.jl/coverage.svg?branch=master)](http://codecov.io/github/joshbode/JSONify.jl?branch=master)ossless conversion of custom Julia objects to and from JSON.
 
 This package was motivated by improving the de/serialization of DataFrames
 from/to JSON. More types will be added as required.
