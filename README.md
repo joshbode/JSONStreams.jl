@@ -19,11 +19,20 @@ Convert a DataFrame to JSON and back, preserving column types.
 using JSONify
 using DataFrames
 
-data = DataFrame(a = ["a", "b", "c", "d"], b = rand(4), c = [1, 2, 3, 4])
 
-x = JSON.json(data)                 # Convert DataFrame to JSON
-
+# Complete data
+data  = DataFrame(a = ["a", "b", "c", "d"], b = rand(4), c = [1, 2, 3, 4])
+x     = JSON.json(data)             # Convert DataFrame to JSON
 data2 = DataFrame(JSON.parse(x))    # Parse x from JSON to DataFrame
-
 data2 == data                       # true
+eltypes(data2) == eltypes(data)     # true, types are preserved
+
+
+# Missing data
+data[1, :a] = NA
+data
+x     = JSON.json(data)
+data2 = DataFrame(JSON.parse(x))
+isequal(data2, data)                # true
+eltypes(data2) == eltypes(data)     # true
 ```
